@@ -1,0 +1,565 @@
+/* Custom style */
+
+/* Sidebar */
+
+.collapse.width {
+  width: 0;
+  max-width: 0;
+  height: 100%;
+  transition: right 0.3s linear, max-width 0.3s linear;
+  position: relative;
+  top: 0;
+  right: 100%;
+  left: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.vh-100 {
+    min-height: 100vh;
+}
+
+.collapsing.width {
+  transition: right 0.3s linear, max-width 0.7s linear;
+  width: 0% !important;
+  height: 100%;
+  max-width: 0% !important;
+  min-width: 0;
+  right: 0;
+  position: relative;
+  display: block;
+}
+
+.collapse .list-group-item {
+  white-space:nowrap
+}
+
+.collapse.width.show {
+  transition: right 0.3s linear, max-width 0.3s linear;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-width: 50px;
+  right: 0;
+  position: relative;
+  display: block;
+}
+
+/* global */
+
+#MainContainer {
+  margin-top: 42px;
+  margin-bottom: 42px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+#BUESHCSaccordion .btn-link {
+  font-family: revert;
+  font-size: 0.6em;
+  text-decoration: none;
+}
+
+#BUESHCSaccordion > div:nth-child(n).card {
+  border: none !important;
+}
+
+#BUESHCSaccordion > div:nth-child(n).card > div:nth-child(n).card-header {
+  background-color: #212529;
+}
+
+#BUESHCSaccordion > div:nth-child(n).card > div:nth-child(n).card-header > h1 > button {
+color: white;
+text-shadow: .1em .1em 0 rgba(0, 0, 0, 0.5);
+}
+
+#BUESHCSaccordion > div:nth-child(n).card > div:nth-child(n).card-header > h1 > button:hover {
+  color: black; /*#007bff*/
+  font-weight: bold;
+  background-color: yellow;
+  text-shadow: .1em .1em 0 rgba(255, 255, 255, 0.5);
+}
+
+#BUESHCSaccordion > div:nth-child(n).card > div:nth-child(n).card-header > h1 > button:focus {
+background-color: #383a40;
+/*background-color: yellow;*/
+}
+
+/* #BUESHCSaccordion > h1 > button:focus:hover */
+#BUESHCSaccordion > div:nth-child(n).card > div:nth-child(n).card-header > h1 > button:focus:hover {
+background-color: yellow;
+}
+
+#BUESHCSaccordion > div.card > div > div > div > div > .card > .card-header > h2 > button {
+  font-size: 0.6em;
+  color: black;
+}
+
+#BUESHCSaccordion > div.card > div > div > div > div > .card > .card-header > h2 > button:hover {
+  color: #007bff;
+  background-color: #fcf8e3;
+  font-weight: bold;
+}
+
+#BUESHCSaccordion > div.card > div > div > div > div > .card > .card-header > h2 > button:focus {
+  color: #007bff;
+  background-color: yellow;
+  font-weight: bold;
+}
+
+h3.lead {
+  background-color: #007bff !important;
+  border-radius: 1em;
+}
+
+::selection {
+  background: yellow;
+  color: black;
+}
+
+.search-highlight {
+  background-color: yellow;
+}
+
+/* Code block */
+
+.code-block {
+  position: relative;
+}
+
+pre {
+  background-color: #272822;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+/* Copy button */
+
+.copy-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+/* Tooltip */
+
+.copy-tooltip {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.5rem);
+  transform: translateX(-50%);
+  background-color: #212529;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 0.75rem;
+}
+
+.copy-btn:hover .copy-tooltip {
+  opacity: 1;
+}
+
+.copy-btn[data-copied=true] .copy-tooltip {
+  opacity: 1;
+}
+
+.tooltip.bs-tooltip-top .arrow::before, .tooltip.bs-tooltip-bottom .arrow::before {
+  border-top-color: #212529;
+}
+
+/* Highlight.js */
+
+pre code {
+  display: block;
+  overflow-x: auto;
+  background-color: inherit;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.6rem;
+  color: inherit;
+}
+
+/* Custom Progress Bar */
+.bueshcs-progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 42px;
+    background: transparent;
+}
+
+/* Overiding @media */
+
+/*.container {
+    max-width: 80% !important;
+}*/
+
+@media screen and (min-width: 0px) and (max-width: 1404px) {
+  .bueshcs-progress { display: none; }   /* hide it elsewhere, ps: ça se fait pas d'être en dessous de la Full HD mini... NaN% sérieux... */
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  filter: drop-shadow(0px 0px 13px rgba(0, 0, 0, 0.25));
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.5s ease-in-out;
+  transform-origin: center;
+  stroke-dasharray: 272;
+  stroke-dashoffset: 272;
+}
+
+.progress-ring__circle-shadow {
+  stroke-dasharray: 272s;
+}
+
+.progress-percent {
+    font-size: 23px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    vertical-align: middle;
+    right: 62px;
+    line-height: 42px;
+    transform: translate(0, -50%);
+    white-space: nowrap;
+    opacity: 0.3;
+}
+
+.progress-complete {
+  animation: bounce-and-glow 0.5s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bounce-and-glow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* In search of */
+/* Search bar */
+.search-container {
+  position: relative;
+  margin: 20px 0;
+}
+
+#search-input {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  background-color: transparent;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+#search-input:focus {
+  outline: none;
+  border-bottom: 2px solid #fff;
+}
+
+#search-btn {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.search-icon,
+.close-icon {
+  display: none;
+}
+
+.search-icon i,
+.close-icon i {
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.show-icons #search-input {
+  width: 100%;
+  background-color: #555;
+}
+
+.show-icons #search-btn {
+  right: -50px;
+}
+
+.show-icons .search-icon {
+  display: none;
+}
+
+.show-icons .close-icon {
+  display: flex;
+}
+
+/* Accordions transitions */
+.card-header {
+  transition: all 0.3s ease;
+}
+
+.card-header button {
+  transition: all 0.3s ease;
+}
+
+.card-header button.collapsed::after {
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.card-header button:not(.collapsed)::after {
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.collapse.show {
+  transition: all 0.3s ease;
+}
+
+.collapse:not(.show) {
+  transition: all 0.3s ease;
+}
+
+.trsptrn {
+background-color: #fafafa;
+background-image:  repeating-linear-gradient(45deg, #fdfdfd 25%, transparent 25%, transparent 75%, #fdfdfd 75%, #fdfdfd), repeating-linear-gradient(45deg, #fdfdfd 25%, #e5e5e5 25%, #e5e5e5 75%, #fdfdfd 75%, #fdfdfd);
+background-position: 0 0, 10px 10px;
+background-size: 20px 20px;
+}
+
+.🚧WIP {
+background-color: #fcd53f;
+opacity: 0.8;
+background: repeating-linear-gradient( -45deg, #533566, #533566 5px, #fcd53f 5px, #fcd53f 25px );
+}
+
+/* ######################################## 🌐 SCROLLBARS */
+
+/* Enhance default highlight */
+
+.card-header > h5 > button > mark {
+    padding: 0.2em;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+body {
+    overflow: overlay;
+}
+
+:root {
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+    margin-left: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border: 3px #2f3136 solid;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9ae228;
+    z-index: 998;
+}
+
+/* Back to top for the Klickers Krew */
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+
+/* AMeTRICE */
+
+img.userpicture {
+    margin-right: 0.25rem;
+}
+
+/*:root {
+    --primary: #5a0cb9 !important;
+}
+*/
+.bg-primary {
+    background-color: #5a0cb9 !important;
+}
+
+/* Overadiation of Alerts */
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 0 solid transparent;
+    border-radius: .5rem;
+}
+.alert-heading {
+    color: inherit;
+}
+.alert-link {
+    font-weight: 700;
+}
+.alert-dismissible {
+    padding-right: 3.90625rem;
+}
+.alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: .75rem 1.25rem;
+    color: inherit;
+}
+.alert-primary {
+    color: #2f0660;
+    background-color: #decef1;
+    border-color: #d1bbeb;
+}
+.alert-primary hr {
+    border-top-color: #c4a7e5;
+}
+.alert-primary .alert-link {
+    color: #170330;
+}
+.alert-secondary {
+    color: #06460a;
+    background-color: #cee7d0;
+    border-color: #bbddbd;
+}
+.alert-secondary hr {
+    border-top-color: #aad5ad;
+}
+.alert-secondary .alert-link {
+    color: #021703;
+}
+.alert-success, .environmenttable .ok {
+    color: #026800;
+    background-color: #cdf4cc;
+    border-color: #b9f0b8;
+}
+.alert-success hr, .environmenttable .ok hr {
+    border-top-color: #a4eca3;
+}
+.alert-success .alert-link, .environmenttable .ok .alert-link {
+    color: #013500;
+}
+.alert-info {
+    color: #00434e;
+    background-color: #cce6ea;
+    border-color: #b8dce2;
+}
+.alert-info hr {
+    border-top-color: #a6d3db;
+}
+.alert-info .alert-link {
+    color: #00171b;
+}
+
+/* Why overiding default bootstrap colorscheme with similar colors and removing yellow? Good question! 
+Please next time add your own scheme and don't replace bootstrap defaults... */
+
+.alert-warning, .environmenttable .warn {
+    color: #6d001e;
+    background-color: #f6ccd7;
+    border-color: #f2b8c8;
+}
+.alert-warning hr, .environmenttable .warn hr {
+    border-top-color: #eea2b7;
+}
+.alert-warning .alert-link, .environmenttable .warn .alert-link {
+    color: #3a0010;
+}
+.alert-danger, .environmenttable .error {
+    color: #671400;
+    background-color: #f4d4cc;
+    border-color: #efc3b8;
+}
+.alert-danger hr, .environmenttable .error hr {
+    border-top-color: #eab1a3;
+}
+.alert-danger .alert-link, .environmenttable .error .alert-link {
+    color: #340a00;
+}
+.alert-light {
+    color: #818182;
+    background-color: #fefefe;
+    border-color: #fdfdfe;
+}
+.alert-light hr {
+    border-top-color: #ececf6;
+}
+.alert-light .alert-link {
+    color: #686868;
+}
+.alert-dark {
+    color: #1b1e21;
+    background-color: #d6d8d9;
+    border-color: #c6c8ca;
+}
+.alert-dark hr {
+    border-top-color: #b9bbbe;
+}
+.alert-dark .alert-link {
+    color: #040505;
+}
